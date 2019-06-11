@@ -1,0 +1,212 @@
+"]]]]]]]]]]]]][[[[[[[[[[[[[→Str1
+Disp "","","","","","","","","",""
+ClrHome
+Disp "]]]] WELCOME TO PRIZ! [[[[","","]] BASED ON UNDERTALE'S [[","]]]] FIGHTING SYSTEM! [[[[","",Str1,Str1,Str1,Str1
+Output(10,1,Str1
+Wait 4
+Disp "","","","","","","","","",""
+26→X:2→Y:randInt(2,25)→V:randInt(2,10)→U
+While X≠V or Y≠U
+Output(1,1,"]]]]]] INSERT COINS [[[[[[
+Output(U,V-1,"[ ]"
+Repeat Q
+Output(Y,X,"O"
+getKey→Q
+End
+Output(Y,X," "
+max(1,min(26,X-(Q=24)+(Q=26)))→X
+max(2,min(10,Y-(Q=25)+(Q=34)))→Y
+End
+Output(U,V-1,"[O]
+"O0*I. "→Str1
+For(X,1,6)
+Output(U,V,sub(Str1,X,1
+Wait .3
+End
+Disp "","","","","","","","","",""
+Output(1,1,"]]]]]]]] CONTROLS [[[[[[[[
+Output(3,1,"   [^]                    [<]   [>]   - MOVE AROUND    [V]                                               [CLEAR]    - PAUSE"
+Wait 4
+Disp "","","","","","","","","",""
+Output(1,1," 7 <THIS IS YOU]
+Output(3,1," ] IN AN UNKNOWN WORLD, [  ] YOU ARE THE ONLY ONE [  ] WITH ENDLESS FUN.... [
+Output(10,1,"]]]]]]]] ENJOY... [[[[[[[["
+Wait 4
+Disp "","","","","","","","","",""
+
+{60,60,60,60,60,60,60,60,60,60,60,startTmr}→⌊GAME
+While 1
+For(A,1,20):Disp "":End
+randInt(1,3)→A
+If A=1:Then
+For(θ,1,10)
+randInt(14,16)→⌊GAME(θ)
+End
+"]]]]]]]]]]]]]]]]]]]]]]]]>      <[[[[[[[[[[[[[[[[[[[[[[[[["→Str1
+14→θ:13→X:5→Y:1→U
+For(C,1,10)
+Output(C,1,sub(Str1,⌊GAME(C),26
+End
+For(B,1,randInt(5,10))
+For(C,1,10)
+0→H:While H=0:
+randInt(­2,2)→H
+End:⌊GAME(C)+H→θ
+If θ<1:1→θ
+If θ>30:30→θ
+If B=1:randInt(14,16)→θ
+θ→⌊GAME(C):1→L:0→K
+Output(C,1,sub(Str1,θ,26
+While K<L
+Output(Y,X,7)
+Repeat Q
+getKey→Q:K+1→K
+If K>L:1→Q
+End
+Output(Y,X," ")
+max(1,min(26,X-(Q=24)+(Q=26)))→X
+max(1,min(10,Y-(Q=25)+(Q=34)))→Y
+If Q=45:Then
+Disp "","","","","","","","","",""
+ClrHome
+Disp "]]]]]]]]] PAUSED [[[[[[[[[","","]]]]]]]]]> 7    <[[[[[[[[[","","","","","",""
+Output(10,1,"] ANY KEY TO RESUME GAME [
+Repeat getKey:End
+Disp "","","","","","","","","",""
+For(C,1,10)
+Output(C,1,sub(Str1,⌊GAME(C),26))
+End:End
+⌊GAME(Y)→V
+Output(Y,X,7)
+If 26-V≥X or (V≥33-X and V≠60):Then
+For(G,1,50)
+Output(Y,1,sub(Str1,V,26
+Output(Y,X,"*"
+End:Goto S:End
+End:End:End:End
+If A=2:Then
+"//////////////////////////"→Str1
+For(R,0,2)
+Output(R+1,1,Str1
+Output(10-R,1,Str1
+End
+"--------------------------"→Str1
+Output(3,1,Str1
+Output(8,1,Str1
+6→X:20→L
+For(B,1,randInt(5,20))
+randInt(4,7)→G
+0→K:While K<L
+Output(X,26,7
+Repeat Q
+Output(G,1," "
+Output(G,1,"]"
+getKey→Q:K+1→K
+If K>L:1→Q
+End
+Output(X,26," "
+max(4,min(7,X-(Q=25)+(Q=34)))→X
+If Q=45:Then
+Disp "","","","","","","","","",""
+ClrHome
+Disp "]]]]]]]]] PAUSED [[[[[[[[[","","]  >>>>>>>>>>>>>         7","","","","","",""
+Output(10,1,"] ANY KEY TO RESUME GAME ["
+Repeat getKey:End
+Disp "","","","","","","","","",""
+For(B,0,2)
+Output(B+1,1,"//////////////////////////"
+Output(10-B,1,"//////////////////////////"
+End
+Output(3,1,"--------------------------"
+Output(7,1,"--------------------------"
+End:End
+For(C,1,5)
+Output(X,26,"7
+Output(G,1,">>>>>>>>>>>>>>>>>>>>>>>>>>"
+Wait .1
+Output(G,1,"                          "
+End
+If G=X:Then
+Output(G,1,">>>>>>>>>>>>>>>>>>>>>>>>>>
+For(Q,1,50)
+Output(G,26,">")
+Output(G,26,"*"
+End:Goto S:End
+End:End
+If A=3:Then
+15→X:6→Y
+For(B,1,randInt(2,5))
+Output(1,1,"                          "
+Output(2,2,"+------------------------"
+For(C,3,10)
+Output(C,1," ")
+Output(C,2,"I")
+End
+randInt(1,2)→C
+If C=1:Then
+randInt(3,10)→D
+Output(D,1,"<
+Else
+randInt(3,26)→D
+Output(1,D,"^
+End
+0→G:0→K:While G≠­1:
+Output(Y,X,7
+If C=1:Then
+Repeat Q
+getKey→Q:1+G→G
+If G≤24:Output(D,G+2,">
+If G≥23:Output(D,G-20," 
+If Y=D and X≤G+2 and G≤24:1→K
+If Y=D and X≥G-20 and G≥23:1→K
+If G≥46 or K=1:1→Q
+End:Else
+Repeat Q
+getKey→Q:1+G→G
+If G≤8:Output(G+2,D,"V
+If G>8:Output(G-6,D," 
+If Y≤G+2 and X=D and G≤8:2→K
+If Y≥G-6 and X=D and G>8:2→K
+If G≥16 or K=2:1→Q
+End:End
+If Q=1:­1→G
+Output(Y,X," 
+max(3,min(26,X-(Q=24)+(Q=26)))→X
+max(3,min(10,Y-(Q=25)+(Q=34)))→Y
+Output(Y,X,7
+If Q=45:Then
+Disp "","","","","","","","","",""
+ClrHome
+Disp "]]]]]]]]] PAUSED [[[[[[[[[","","<I    >>>>>>>>>>         7","","","","","",""
+Output(10,1,"] ANY KEY TO RESUME GAME ["
+Repeat getKey:End
+Disp "","","","","","","","","",""
+Output(2,2,"+------------------------
+For(θ,2,10)
+Output(θ,2,"I
+End:End
+If K=2:Then
+For(G,0,7)
+Output(G+3,D,"V
+End
+For(G,1,50)
+Output(Y,X,"V
+Output(Y,X,"*
+End:Goto S:End
+If K=1:Then
+Output(Y,3,">>>>>>>>>>>>>>>>>>>>>>>>"
+For(G,1,50)
+Output(Y,X,">
+Output(Y,X,"*
+End:Goto S:End:End:End:End
+Disp "","","","","","","","","",""
+End
+Lbl S
+"]]]]]]]]]]]]][[[[[[[[[[[[[
+Disp "","","","","","","","","",""
+ClrHome
+Disp "]]]]]]] GAME  OVER [[[[[[[","",Ans,Ans,Ans,Ans,Ans,Ans,Ans
+Output(10,1,Ans
+Wait 4
+Disp "","","","","","","","","",""
+ClrHome
