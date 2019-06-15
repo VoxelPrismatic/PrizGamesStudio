@@ -7,3 +7,5 @@
 3] Done
 ```
 [`[ROM]`](https://tiroms.weebly.com/) [`[LINUX EMU]`](https://software.opensuse.org/download.html?project=home%3Aadriweb%3ACEmu&package=cemu&locale=en) [`[MAC/WIN EMU]`](https://github.com/CE-Programming/CEmu/releases/)
+
+###### If you are having troubles getting this software please visit [`[DISCORD]`](https://discord.gg/Z84Nm6n)
