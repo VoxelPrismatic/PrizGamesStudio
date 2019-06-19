@@ -1,0 +1,407 @@
+"]]]]]]]]]]]]][[[[[[[[[[[[[→Str1
+Disp "","","","","","","","","",""
+ClrHome
+Disp "]]]] WELCOME TO PRIZ! [[[[","","]] BASED ON UNDERTALE'S [[","]]]] FIGHTING SYSTEM! [[[[","",Str1,Str1,Str1,Str1
+Output(10,1,Str1
+Wait 4
+Disp "","","","","","","","","",""
+Output(1,1,"]]]]]]]] CONTROLS [[[[[[[[
+Output(3,1,"    [^]                    [<]   [>] -  MOVE AROUND     [V]                                               [CLEAR]  -  PAUSE"
+Wait 4
+26→X:2→Y:13→V:5→U
+SetUpEditor ⌊GAME
+For(Z,1,randInt(3,5))
+Disp "","","","","","","","","",""
+V:While Ans=V
+randInt(2,25)
+End:Ans→V
+U:While Ans=U
+randInt(2,9)
+End:Ans→U
+While X≠V or Y≠U
+Output(1,1,"]]]]]] INSERT COINS [[[[[[
+Output(10,1,"]]]]]]]]]]]]][[[[[[[[[[[[[
+Output(U,V-1,"[ ]"
+Repeat Q
+Output(Y,X,"O"
+getKey→Q
+End
+Output(Y,X," "
+max(1,min(26,X-(Q=24)+(Q=26)))→X
+max(2,min(9,Y-(Q=25)+(Q=34)))→Y
+End
+Output(U,V-1,"[O]
+"O0*I. "→Str1
+For(X,1,6)
+Output(U,V,sub(Str1,X,1
+Wait .3
+End
+If dim(⌊GAME)≠0:6→Z
+End
+Disp "","","","","","","","","",""
+Output(1,1," 7 <THIS IS YOU]
+Output(3,1," ] IN AN UNKNOWN WORLD, [  ] YOU ARE THE ONLY ONE [  ] WITH ENDLESS FUN.... [
+Output(10,1,"]]]]]]]] ENJOY... [[[[[[[["
+Wait 4
+2→X:1→Y
+For(Z,1,10):Output(Y,X," "):Disp "":Output(Y,X,7):End
+{60,60,60,60,60,60,60,60,60,60,60,startTmr,0}→⌊GAME
+While 1
+For(Z,1,10):Output(Y,X," "):Disp "":Output(Y,X,7):End
+randInt(1,5)→A
+
+If A=1:Then
+For(θ,1,10)
+randInt(14,16)→⌊GAME(θ)
+End
+"]]]]]]]]]]]]]]]]]]]]]]]]>      <[[[[[[[[[[[[[[[[[[[[[[[[["→Str1
+While X≠14 or Y≠5
+Output(Y,X," ")
+X-(X>14)+(X<14)→X
+Y-(Y>05)+(Y<05)→Y
+Output(Y,X,7)
+Wait .05:End
+14→θ:14→X:5→Y:1→U:3→L
+For(C,1,10)
+Output(C,1,sub(Str1,⌊GAME(C),26
+Output(Y,X,7
+End
+For(B,1,randInt(30,100))
+For(C,2,10)
+⌊GAME(C)→⌊GAME(C-1)
+End
+0→H:While H=0:
+randInt(­2,2)→H
+End:⌊GAME(10)+H→θ
+max(1,min(θ,30))→θ
+θ→⌊GAME(10):0→K
+Output(Y,X," "
+Disp ""
+Output(10,1,sub(Str1,θ,26
+While K<L
+Output(Y,X,7)
+Repeat Q
+getKey→Q:K+1→K
+If K>L:1→Q
+End
+Output(Y,X," ")
+max(1,min(26,X-(Q=24)+(Q=26)))→X
+max(1,min(10,Y-(Q=25)+(Q=34)))→Y
+If Q=45:Then
+startTmr→A
+Disp "","","","","","","","","",""
+ClrHome
+Disp "]]]]]]]]] PAUSED [[[[[[[[[","","]]]]]]]]]> 7    <[[[[[[[[[","","","","","",""
+Output(10,1,"] ANY KEY TO RESUME GAME [
+Repeat getKey:End
+Disp "","","","","","","","","",""
+For(C,1,10)
+Output(C,1,sub(Str1,⌊GAME(C),26))
+checkTmr(A)+⌊GAME(13)→⌊GAME(13)
+End:End
+⌊GAME(Y)→V
+Output(Y,X,7)
+If 26-V≥X or (V≥33-X and V≠60):Then
+startTmr→A
+For(G,1,100)
+Output(Y,1,sub(Str1,V,26
+Output(Y,X,"*"
+End:checkTmr(A)+⌊GAME(13)→⌊GAME(13):Goto S:End
+End:End:End
+
+If A=2:Then
+While X≠26 or Y≠6
+Output(Y,X," ")
+X-(X>26)+(X<26)→X
+Y-(Y>06)+(Y<06)→Y
+Output(Y,X,7)
+Wait .05:End
+"//////////////////////////"→Str1
+For(R,0,2)
+Output(R+1,1,Str1
+Output(10-R,1,Str1
+End
+"--------------------------"→Str1
+Output(3,1,Str1
+Output(8,1,Str1
+6→X:20→L
+For(B,1,randInt(5,20))
+randInt(4,7)→G
+0→K:While K<L
+Output(X,26,7
+Repeat Q
+Output(G,1," "
+Output(G,1,"]"
+getKey→Q:K+1→K
+If K>L:1→Q
+End
+Output(X,26," "
+max(4,min(7,X-(Q=25)+(Q=34)))→X
+If Q=45:Then
+startTmr→A
+Disp "","","","","","","","","",""
+ClrHome
+Disp "]]]]]]]]] PAUSED [[[[[[[[[","","]  >>>>>>>>>>>>>         7","","","","","",""
+Output(10,1,"] ANY KEY TO RESUME GAME ["
+Repeat getKey:End
+Disp "","","","","","","","","",""
+For(B,0,2)
+Output(B+1,1,"//////////////////////////"
+Output(10-B,1,"//////////////////////////"
+checkTmr(A)+⌊GAME(13)→⌊GAME(13)
+End
+Output(3,1,"--------------------------"
+Output(8,1,"--------------------------"
+End:End
+For(C,1,5)
+Output(X,26,"7
+Output(G,1,">>>>>>>>>>>>>>>>>>>>>>>>>>"
+Wait .1
+Output(G,1,"                          "
+End
+If G=X:Then
+startTmr→A
+Output(G,1,">>>>>>>>>>>>>>>>>>>>>>>>>>
+For(Q,1,150)
+Output(G,26,">")
+Output(G,26,"*"
+End:X→Y:26→X:checkTmr(A)+⌊GAME(13)→⌊GAME(13):Goto S:End
+End:X→Y:26→X:End
+
+If A=3:Then
+While X≠15 or Y≠6
+Output(Y,X," ")
+X-(X>15)+(X<15)→X
+Y-(Y>06)+(Y<06)→Y
+Output(Y,X,7)
+Wait .05
+End
+15→X:6→Y
+For(B,1,randInt(2,5))
+Output(1,1,"                          "
+Output(2,2,"+------------------------"
+For(C,3,10)
+Output(C,1," ")
+Output(C,2,"I")
+End
+randInt(1,2)→C
+If C=1:Then
+randInt(3,10)→D
+Output(D,1,"<
+Else
+randInt(3,26)→D
+Output(1,D,"^
+End
+0→G:0→K:While G≠­1:
+Output(Y,X,7
+If C=1:Then
+Repeat Q
+getKey→Q:1+G→G
+If G≤24:Output(D,G+2,">
+If G≥23:Output(D,G-20," 
+If Y=D and X≤G+2 and G≤24:1→K
+If Y=D and X≥G-20 and G≥23:1→K
+If G≥46 or K=1:1→Q
+End:Else
+Repeat Q
+getKey→Q:1+G→G
+If G≤8:Output(G+2,D,"V
+If G>8:Output(G-6,D," 
+If Y≤G+2 and X=D and G≤8:2→K
+If Y≥G-6 and X=D and G>8:2→K
+If G≥16 or K=2:1→Q
+End:End
+If Q=1:­1→G
+Output(Y,X," 
+max(3,min(26,X-(Q=24)+(Q=26)))→X
+max(3,min(10,Y-(Q=25)+(Q=34)))→Y
+Output(Y,X,7
+If Q=45:Then
+startTmr→A
+Disp "","","","","","","","","",""
+ClrHome
+Disp "]]]]]]]]] PAUSED [[[[[[[[[","","<I    >>>>>>>>>>         7","","","","","",""
+Output(10,1,"] ANY KEY TO RESUME GAME ["
+Repeat getKey:End
+Disp "","","","","","","","","",""
+Output(2,2,"+------------------------
+For(θ,2,10)
+Output(θ,2,"I
+End
+checkTmr(A)+⌊GAME(13)→⌊GAME(13)
+End
+If K=2:Then
+startTmr→A
+For(G,0,7)
+Output(G+3,D,"V
+End
+For(G,1,150)
+Output(Y,X,"V
+Output(Y,X,"*
+End:checkTmr(A)+⌊GAME(13)→⌊GAME(13):Goto S:End
+If K=1:Then
+startTmr→A
+Output(Y,3,">>>>>>>>>>>>>>>>>>>>>>>>"
+For(G,1,150)
+Output(Y,X,">
+Output(Y,X,"*
+End
+checkTmr(A)+⌊GAME(13)→⌊GAME(13):Goto S:End
+End:End:End
+
+If A=4:Then
+While X≠13 or Y≠1
+Output(Y,X," ")
+X-(X>13)+(X<13)→X
+Y-(Y>01)+(Y<01)→Y
+Output(Y,X,7)
+Wait .05:End
+13→X:3→L:1→Y
+For(C,1,10)
+1→⌊GAME(C)
+Output(C,1,"^
+End
+For(B,1,randInt(30,50))
+Output(Y,X," "
+Disp ""
+Output(Y,X,7
+For(C,2,10)
+⌊GAME(C)→⌊GAME(C-1)
+End
+randInt(1,26)→⌊GAME(10)
+Output(10,⌊GAME(10),"^"
+0→G:While G<L:
+Output(Y,X,7
+Repeat Q
+getKey→Q:G+1→G
+If G=L:1→Q
+End
+Output(Y,X," "
+max(1,min(26,X-(Q=24)+(Q=26)))→X
+max(1,min(10,Y-(Q=25)+(Q=34)))→Y
+Output(Y,X,7
+If X=⌊GAME(Y):Then
+startTmr→A
+For(G,1,150)
+Output(Y,X,"^
+Output(Y,X,"*
+End:checkTmr(A)+⌊GAME(13)→⌊GAME(13):Goto S:End
+If Q=45:Then
+startTmr→A
+Disp "","","","","","","","","",""
+ClrHome
+Disp "]]]]]]]]] PAUSED [[[[[[[[[","","^   ^^  ^   ^^ 7 ^^^  ^  ^","","","","","",""
+Output(10,1,"] ANY KEY TO RESUME GAME ["
+Repeat getKey:End
+Disp "","","","","","","","","",""
+For(C,1,10)
+Output(C,⌊GAME(C),"^"
+End
+checkTmr(A)+⌊GAME(13)→⌊GAME(13)
+End:End:End:End
+
+If A=5:Then
+While X≠14 or Y≠5
+Output(Y,X," ")
+X-(X>14)+(X<14)→X
+Y-(Y>05)+(Y<05)→Y
+Output(Y,X,7)
+Wait .05:End
+40→L:1→D
+Output(2,7,"--------------"
+Output(9,7,"--------------"
+For(B,1,randInt(8,10)) 
+If D=3 or D=4:Then
+8→U:3→V:­1→S
+Else
+3→U:8→V:1→S
+End
+For(G,U,V,S)
+Output(G,7,"I            I"
+Output(Y,X,7
+End
+randInt(1,7)→D
+Output(1,1,"                          "
+Output(10,1,"                          "
+If D=1:Output(1,5,"><
+If D=2:Output(1,20,"><
+If D=3:Output(10,5,"><
+If D=4:Output(10,20,"><
+If D≥5:Output(1,(D-4)5+3,"><
+0→G:While G<L
+Repeat Q
+getKey→Q:G+1→G
+If G=L:1→Q
+End
+Output(Y,X," "
+max(7,min(19,X-(Q=24)+(Q=26)))→X
+max(3,min(8,Y-(Q=25)+(Q=34)))→Y
+Output(Y,X,7
+End
+If Q=45:Then
+startTmr→A
+Disp "","","","","","","","","",""
+ClrHome
+Disp "]]]]]]]]] PAUSED [[[[[[[[[","","        I  7    I ><      ","","","","","",""
+Output(10,1,"] ANY KEY TO RESUME GAME ["
+Repeat getKey:End
+Disp "","","","","","","","","",""
+Output(2,7,"--------------"
+Output(9,7,"--------------"
+For(G,U,V,S)
+Output(G,7,"I            I"
+Output(Y,X,7
+End
+checkTmr(A)+⌊GAME(13)→⌊GAME(13)
+End
+If D=3 or D=4:Then
+7→U:2→H:­1→S
+Else
+2→U:7→H:1→S
+End
+For(G,U,H,S)
+If D=3 or D=2:26-(4+2G)→V
+If D=1 or D=4:4+2G→V
+If D<5:Output(G+1,V,"<>"
+If D>4:Output(G+1,(D-4)5+3,"<>"
+If ((X=V or X=V+1) and (D<5) or ((X=(D-4)5+3 or X=(D-4)5+4) and D>4)) and Y=G+1:Then
+startTmr→A
+For(Z,1,150)
+If D<5:Output(G+1,V,"<>"
+If D>4:Output(G+1,(D-4)5+3,"<>"
+Output(Y,X,"*"
+End:checkTmr(A)+⌊GAME(13)→⌊GAME(13):Goto S:End:End
+End:End
+
+End
+
+Lbl S
+For(Z,1,10):Output(Y,X," "):Disp "":Output(Y,X,7):End
+X→U:Y-1→V
+Wait .1
+Output(V,X,"_
+Output(Y,U,"/
+Wait .1
+While V≠0 or U≠27
+If V>0:Output(V,X," "
+If U<27:Output(Y,U," "
+U+(U<27)→U:V-(V>0)→V
+If V>0:Output(V,X,"_
+If U<27:Output(Y,U,"/
+Wait .1
+End
+"]]]]]]]]]]]]][[[[[[[[[[[[[
+Disp "","","","","","","","","",""
+ClrHome
+Disp "]]]]]]] GAME  OVER [[[[[[[","",Ans,Ans,Ans,Ans,Ans,Ans,Ans
+0→B:0→C:checkTmr(⌊GAME(12))-⌊GAME(13)-5→A
+While A-60≥0
+B+1→B:A-60→A
+End
+While B-60≥0
+C+1→C:B-60→B
+End
+Output(10,1,"TIME ALIVE ] "+eval(C)+":"+eval(B)+":"+eval(A)
+Wait 10
+Disp "","","","","","","","","",""
+ClrHome
